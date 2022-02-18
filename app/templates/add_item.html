@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Add Item{% endblock %}
+
+{% block page_content %}
+
+<a href="{{ url_for('index') }}"><h1 class="text-white display-4 mt-3">Add Item to JSON</h1></a>
+<p class="text-white">Enter in the new info to the fields below.</p>
+
+<form action='{{ url_for("add_item") }}' method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.url }}
+	{% for item in form %}
+		{% if item.name != "csrf_token" %}
+			{% if item.name != "submit" %}
+				{% if item.name == "url" %}
+					<div class="form-group mb-3">
+						{{ item.label(class="text-light") }}
+						<p class="text-white" id="url-stand-in"></p>
+					</div>
+				{% else %}
+					<div class="form-group mb-3">
+						{{ item.label(class="text-light") }}
+						{{ item(class="form-control") }}
+					</div>
+				{% endif %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<div style="display: flex; justify-content: space-between;">
+		<a type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Comments</a>
+		<div style="display: flex; justify-content: flex-end;">
+			<input type="reset" class="btn btn-warning mx-3" />
+			{{ form.submit(class="btn btn-success mx-3") }}
+		</div>
+	</div>
+</form>
+
+<script>
+	window.addEventListener("load", (event) => {
+		raw_title = document.getElementById("title").value;
+		lowercase_title = raw_title.toLowerCase();
+		treated_title = lowercase_title.replaceAll(" ", "_");
+		document.getElementById("url").value = treated_title;
+		document.getElementById("url-stand-in").innerText = treated_title;
+	});
+	document.getElementById("title").addEventListener("input", (event) => {
+		raw_title = document.getElementById("title").value;
+		lowercase_title = raw_title.toLowerCase();
+		treated_title = lowercase_title.replaceAll(" ", "_");
+		document.getElementById("url").value = treated_title;
+		document.getElementById("url-stand-in").innerText = treated_title;
+	});
+</script>
+
+
+{% endblock %}

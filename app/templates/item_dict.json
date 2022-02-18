@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Snowboard",
+    "plan": "sell",
+    "category": "fitness",
+    "description": "Artec Novus 154W board w/ Head NX One (white) bindings",
+    "url": "snowboard",
+    "comments": [
+      [
+        "2022-02-13",
+        "Moved to storage locker."
+      ],
+      [
+        "2022-02-14",
+        "Try and sell for more than it's worth. I don't really want it gone, but my need of it is dwindling."
+      ],
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Snowboard Helmet",
+    "plan": "sell",
+    "category": "fitness",
+    "url": "snowboard_helmet",
+    "description": "Protec snowboard helmet (no in ear speakers)",
+    "comments": [
+      [
+        "2022-02-13",
+        "Moved to storage locker."
+      ],
+      [
+        "2022-02-14",
+        "Try and sell. You won't be using it soon and it might be time to upgrade to something with speakers anyways."
+      ],
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Socket Set",
+    "plan": "keep",
+    "category": "tools",
+    "url": "socket_set",
+    "description": "Fresh, never used socket set",
+    "comments": [
+      [
+        "2022-02-13",
+        "Moved to storage locker."
+      ],
+      [
+        "2022-02-14",
+        "I'm on the fence about this one. On the one hand I haven't used it in the 8 years I've had it. On the other hand, it's compact and valuable."
+      ]
+    ]
+  },
+  {
+    "title": "East of Eden",
+    "plan": "keep",
+    "category": "books",
+    "url": "east_of_eden",
+    "description": "Soft cover (centennial edition) book by John Steinbeck",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Grapes of Wrath",
+    "plan": "keep",
+    "category": "books",
+    "url": "grapes_of_wrath",
+    "description": "Soft cover (centennial edition) book by John Steinbeck",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Flask Web Textbook",
+    "plan": "keep",
+    "category": "books",
+    "url": "flask_web_textbook",
+    "description": "Soft cover textbook by Miguel Grinberg (2018)",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Alberta Road Atlas",
+    "plan": "keep",
+    "category": "books",
+    "url": "alberta_road_atlas",
+    "description": "Detailed map book for Alberta",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "Sask Road Atlas",
+    "plan": "keep",
+    "category": "books",
+    "url": "sask_road_atlas",
+    "description": "Detailed map book for Saskatchewan",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "title": "BC Road Atlas",
+    "plan": "keep",
+    "category": "books",
+    "url": "bc_road_atlas",
+    "description": "Detailed map book for British Columbia",
+    "comments": [
+      [
+        "",
+        ""
+      ]
+    ]
+  }
+]

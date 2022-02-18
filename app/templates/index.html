@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block page_content %}
+
+<h1 class="text-white display-4 mt-3">Storage Locker Inventory</h1>
+<p class="text-white">These pages will be used to keep track of what exactly is being kept in the storage locker.</p>
+<table>
+    <tr>
+        <th>ITEM</th>
+        <th>PLAN</th>
+        <th>CATEGORY</th>
+        <th>DESC.</th>
+        <th>COMMENTS</th>
+        <th>REMOVE</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td><a class="btn btn-primary form-control" href="{{ url_for(item['url']) }}">{{ item["title"] }}</a></td>
+            <td>{{ item["plan"] }}</td>
+            <td>{{ item["category"] }}</td>
+            <td>{{ item["description"] }}</td>
+            <td><a class="btn btn-secondary" href="">COMMENTS</a></td>
+            <td>
+                <a class="btn" href="{{ url_for('remove_item', item_url= item['url']) }}" data-bs-toggle="modal" data-bs-target="#confirm-modal" id="modal-btn">
+                    <img src="{{ url_for('static', filename='images/trash-alt-solid.svg') }}" alt="delete icon" height=50 />
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    
+</table>
+
+<div class="modal fade" id="confirm-modal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirm Item Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you certain you want to delete this item? It can't be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="modal-form" action="#">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: end;">
+    <a href="{{ url_for('add_item') }}"class="btn btn-success px-3 mt-5 mx-5" style="font-size: xx-large;">+</a>
+</div>
+
+<script>
+    // Whenever the modal is opened, adjust what action the form
+    // in the modal will submit too (based on which item the user
+    // wants to delete).
+    $('#confirm-modal').on('show.bs.modal', function (e) {
+        var clickedBtn = $(e.relatedTarget);
+        document.getElementById("modal-form").action = clickedBtn[0];
+    });
+</script>
+
+{% endblock %}
